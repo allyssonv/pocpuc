@@ -1,0 +1,38 @@
+{{ define "Create" }}
+    {{ template "Header" }}
+<div id="none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="go" method="POST" action="create">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Product</h4>
+                    <a href="/" class="close" aria-hidden="true">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Image Path</label>
+                        <input type="text" class="form-control" name="imagePath" value="img/items/**.jpg" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" class="form-control" name="category" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="form-control" name="price" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/" class="btn btn-default" value="Cancel">Cancel</a>
+                    <input type="submit" class="btn btn-success" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    {{ template "Footer" }}
+{{ end }}

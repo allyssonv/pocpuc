@@ -1,0 +1,29 @@
+{{ define "Delete" }}
+
+    {{ template "Header" }}
+
+<!-- Delete Modal HTML -->
+<div id="#deleteModal" class="">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" action="delete?id={{ .Id }}">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete <b>{{ .Name }}</b> ?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <a href="/" class="btn btn-default" value="Cancel">Cancel</a>
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+    {{ template "Footer" }}

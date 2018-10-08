@@ -1,0 +1,45 @@
+{{ define "Update" }}
+
+{{ template "Header" }}
+
+<div id="upd" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="POST" action="update">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Product</h4>
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="uid" value="{{ .Id }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ImagePath</label>
+                        <input type="text" class="form-control" name="imagePath" value="{{ .ImagePath }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" value="{{ .Name }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" class="form-control" name="category" value="{{ .Category }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="form-control" name="price" value="{{ .Price }}" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/" class="btn btn-default" >Cancel</a>
+                    <input type="submit" class="btn btn-info" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{ template "Footer" }}
+
+{{ end }}
